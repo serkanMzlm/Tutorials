@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include <stdarg.h>
+#include <math.h>
 
 int toplama(int ,int);
 
@@ -20,7 +22,7 @@ int main(){
 
 }
 
-toplama(int value1,int value2 ){ //int on tanımlı oldugu icin belirtilmek zorunda degil
+int toplama(int value1,int value2 ){ //int on tanımlı oldugu icin belirtilmek zorunda degil
 	int toplam = value1+value2;
 	return toplam;
 }
@@ -45,7 +47,7 @@ int cikar(int parametreSayisi,...){ // bu kısımda parametrelerin ikisinide eks
 	va_start(Parametre,parametreSayisi);
 	int cikarma=0;
 	for(int i=0;i<parametreSayisi;i++){
-		cikarma-=va_arg(Parametre,int);
+		cikarma-=va_arg(Parametre, int);
 	}
 	printf("cikarma =%d\n",cikarma);
 	va_end(Parametre);
